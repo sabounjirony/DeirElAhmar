@@ -1,23 +1,24 @@
-var express = require('express'); //Web Framework
-var app = express();
+var express = require('express'),
+app = express(),
+port = process.env.PORT || 3000;
 
-var sql = require('mssql'); //MS Sql Server client
-
-var sqlConfig = {
-    user: "sa",
-    password: "sapassword",
-    server: "DQSRV-TFS01\\TFS01",
-    database: "DQTasks"
-}
-
+mongoose = require('mongoose'),
 Code = require('../api/models/system/codeModel'), //created model loading here
 bodyParser = require('body-parser');
+
+// mongoose instance connection url connection
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/Seed', { useMongoClient: true }); 
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+// app.use(function(req, res) {
+//     res.status(404).send({url: req.originalUrl + ' not found'})
+//   });
+
 var routes = require('../api/routes/System/codeRoutes'); //importing route
 routes(app); //register the route
 
-//Start server and listen on http://localhost:8081/
-var server = app.listen(8081, function () {
-    var host = server.address().address
-    var port = server.address().port
-    console.log("app listening at http://%s:%s", host, port)
-});
+app.listen(port);
+
+console.log('API started successfully: ' + port);
