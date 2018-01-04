@@ -1,0 +1,9 @@
+{
+
+    "Username": "Username",
+    "Password": "Password",
+
+    "Welcome": "Welcome",
+
+    "InvalidField": "{{FieldName}} is invalid!"
+}

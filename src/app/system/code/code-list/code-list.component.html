@@ -1,0 +1,56 @@
+<div class="fieldSet">
+    <h3>
+        <label id="lblCodeSearch" class="text-primary">Code search</label>
+    </h3>
+</div>
+<form [formGroup]="frm">
+    <div class="row no-gutter form-group-sm">
+        <label for="ddlCategory" class="col-sm-1">Category</label>
+        <div class="col-sm-2">
+            <select id="ddlCategory" formControlName="ddlCategory" [(ngModel)]="model.Category" class="form-control input-sm" pInputText>
+                <option value="">...</option>
+                <option value="1">Category 1</option>
+                <option value="2">Category 2</option>
+            </select>
+        </div>
+        <label for="ddlStatus" class="col-sm-1">Status</label>
+        <div class="col-sm-2">
+            <select id="ddlStatus" formControlName="ddlStatus" [(ngModel)]="model.Status" class="form-control input-sm">
+                <option value="">...</option>
+                <option value="A">Active</option>
+                <option value="S">Stopped</option>
+            </select>
+        </div>
+    </div>
+    <div class="row form-group-sm">
+        <label for="txtName" class="col-sm-1">Name</label>
+        <div class="col-sm-2">
+            <input type="text" id="txtName" formControlName="txtName" [(ngModel)]="model.Name" class="form-control input-sm">
+        </div>
+        <label for="txtValue" class="col-sm-1">Value</label>
+        <div class="col-sm-2">
+            <input type="text" id="txtValue" formControlName="txtValue" [(ngModel)]="model.Value" class="form-control input-sm">
+        </div>
+        <div class="col-sm-3">
+            <input type="checkbox" id="chkIsProtected" formControlName="chkIsProtected" [(ngModel)]="model.IsProtected">
+            <label for="chkIsProtected">IsProtected</label>
+        </div>
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-primary" (click)="OnSearch()">Search</button>
+            <button type="button" class="btn btn-primary" (click)="appFunctions.OnReset(frm)">Reset</button>
+        </div>
+    </div>
+</form>
+<p-dataTable [value]="codes" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
+        <p-header>Results</p-header>
+    <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header"></p-column>
+</p-dataTable>
+<!-- <p>
+    code-list works!
+</p>
+
+Routing samples
+1- <a [routerLink]="['dashboard']">dashboard</a> <br/>
+2- <button id="btnHome" (click)="btnHomeClick()">Go home</button> <br/>
+3- <a [routerLink]="['/codes', 'view' , txtId.value]">Code detail</a> <input type="text" #txtId (input)="0" /> <br/>
+{{id}} -->
