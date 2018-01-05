@@ -1,18 +1,13 @@
-import { photo } from '../common.photo';
-import { video } from '../common.video';
-import { link } from '../common.link';
-import { comment } from '../common.comment';
-
 'use strict';
+
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var NewsSchema = new Schema({
-    id: { type: Integer },
     category: { type: String, required: 'Category is required!' },
     subCategory: { type: String, required: 'Sub category is required!' },
     title: { type: String, required: 'Title is required!' },
-    body: { string, default: "" },
+    body: { String, default: "" },
     source: { type: String, required: 'Source is required!' },
     date: { type: Date, default: Date.now },
     branchId: { type: Number },
@@ -22,10 +17,10 @@ var NewsSchema = new Schema({
     userId: { type: Number },
     status: { type: String, default: ["D"] },
     xtraData: { type: String, default: "" },
-    photos: [photo],
-    videos: [video],
-    links: [link],
-    comments: [comment],
+    photos: [PhotoModel.schema],
+    videos: [VideoSchema],
+    links: [LinkSchema],
+    comments: [CommentSchema],
     tags: [String]
 });
 
