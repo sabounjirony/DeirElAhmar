@@ -1,5 +1,10 @@
 'use strict';
 
+require('./common/photoModel.js');
+require('./common/videoModel.js');
+require('./common/linkModel.js');
+require('./common/commentModel.js');
+
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -17,11 +22,11 @@ var NewsSchema = new Schema({
     userId: { type: Number },
     status: { type: String, default: ["D"] },
     xtraData: { type: String, default: "" },
-    photos: [PhotoModel.schema],
-    videos: [VideoSchema],
-    links: [LinkSchema],
-    comments: [CommentSchema],
+    photos: [mongoose.model('photo').schema],
+    videos: [mongoose.model('video').schema],
+    links: [mongoose.model('link').schema],
+    comments: [mongoose.model('comment').schema],
     tags: [String]
-});
+}, { collection: 'news' });
 
 module.exports = mongoose.model('news', NewsSchema);

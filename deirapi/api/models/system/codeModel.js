@@ -9,6 +9,6 @@ var CodeSchema = new Schema({
     Description: {type: String},
     Status: {type: [{type: String,enum: ['Active', 'Stopped']}], default: ['Active']},
     IsProtected: {type: Boolean, default: true}
-});
+}, { collection: 'code' });
 
 module.exports = mongoose.model('code', CodeSchema);

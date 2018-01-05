@@ -1,13 +1,14 @@
 'use strict';
+
 module.exports = function (app) {
-    var codeController = require('../../controllers/system/codeController');
+    var objController = require('../../controllers/system/codeController');
 
     app.route('/code')
-        .get(codeController.getAll)
-        .post(codeController.post);
+        .get(objController.getAll)
+        .post(objController.post);
 
     app.route('/code/:id')
-        .get(codeController.get)
-        .put(codeController.put)
-        .delete(codeController.delete);
+        .get(objController.get)
+        .put(objController.put)
+        .delete(objController.delete);
 };

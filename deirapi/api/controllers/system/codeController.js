@@ -19,7 +19,7 @@ exports.getAll = function (req, res) {
     });
 };
 
-exports.put = function (req, res) {
+exports.post = function (req, res) {
     var oCode = new Code(req.body);
     oCode.save(function (err, code) {
         if (err)
@@ -28,7 +28,7 @@ exports.put = function (req, res) {
     });
 };
 
-exports.post = function (req, res) {
+exports.put = function (req, res) {
     Code.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }, function (err, code) {
         if (err)
             res.send(err);
