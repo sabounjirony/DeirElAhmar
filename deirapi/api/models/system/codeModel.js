@@ -8,7 +8,7 @@ var CodeSchema = new Schema({
     Value: {type: String, required: 'Kindly enter the value of the code'},
     Description: {type: String},
     Status: {type: [{type: String,enum: ['Active', 'Stopped']}], default: ['Active']},
-    IsProtected: {type: Boolean, default: [true]}
+    IsProtected: {type: Boolean, default: true}
 });
 
 module.exports = mongoose.model('code', CodeSchema);

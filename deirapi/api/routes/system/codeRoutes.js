@@ -2,11 +2,11 @@
 module.exports = function (app) {
     var codeController = require('../../controllers/system/codeController');
 
-    app.route('/Code')
+    app.route('/code')
         .get(codeController.loadAll)
         .post(codeController.create);
 
-    app.route('/Code/:id')
+    app.route('/code/:id')
         .get(codeController.loadSingle)
         .put(codeController.update)
         .delete(codeController.delete);
