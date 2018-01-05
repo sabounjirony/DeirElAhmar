@@ -3,11 +3,11 @@ module.exports = function (app) {
     var codeController = require('../../controllers/system/codeController');
 
     app.route('/code')
-        .get(codeController.loadAll)
-        .post(codeController.create);
+        .get(codeController.getAll)
+        .post(codeController.post);
 
     app.route('/code/:id')
-        .get(codeController.loadSingle)
-        .put(codeController.update)
+        .get(codeController.get)
+        .put(codeController.put)
         .delete(codeController.delete);
 };

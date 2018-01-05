@@ -3,7 +3,23 @@
 var mongoose = require('mongoose'),
     Code = mongoose.model('code');
 
-exports.create = function (req, res) {
+exports.get = function (req, res) {
+    Code.findById(req.params.id, function (err, code) {
+        if (err)
+            res.send(err);
+        res.json(code);
+    });
+};
+
+exports.getAll = function (req, res) {
+    Code.find({}, function (err, code) {
+        if (err)
+            res.send(err);
+        res.json(code);
+    });
+};
+
+exports.put = function (req, res) {
     var oCode = new Code(req.body);
     oCode.save(function (err, code) {
         if (err)
@@ -12,7 +28,7 @@ exports.create = function (req, res) {
     });
 };
 
-exports.update = function (req, res) {
+exports.post = function (req, res) {
     Code.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }, function (err, code) {
         if (err)
             res.send(err);
@@ -26,22 +42,6 @@ exports.delete = function (req, res) {
     }, function (err, code) {
         if (err)
             res.send(err);
-        res.json({ message: 'Code successfully deleted' });
-    });
-};
-
-exports.loadSingle = function (req, res) {
-    Code.findById(req.params.id, function (err, code) {
-        if (err)
-            res.send(err);
-        res.json(code);
-    });
-};
-
-exports.loadAll = function (req, res) {
-    Code.find({}, function (err, code) {
-        if (err)
-            res.send(err);
-        res.json(code);
+        res.json({ message: 'Successfully deleted' });
     });
 };
