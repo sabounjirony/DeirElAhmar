@@ -1,7 +1,6 @@
 var express = require('express'),
 app = express(),
-port = process.env.PORT || 3000,
-MONGODB_URI = 'mongodb://localhost:27017/deirelahmar';
+port = process.env.PORT || 3000;
 
 mongoose = require('mongoose'),
 Code = require('../deirapi/api/models/system/codeModel'), //created model loading here
