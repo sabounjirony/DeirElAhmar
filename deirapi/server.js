@@ -1,9 +1,43 @@
 var express = require('express'),
 app = express(),
-port = process.env.PORT || 3000;
-
+port = process.env.PORT || 3000,
 mongoose = require('mongoose'),
-Code = require('../deirapi/api/models/system/codeModel'), //created model loading here
+Entity = require('../deirapi/api/models/entity/entityModel'), //created model loading here
+Address = require('../deirapi/api/models/entity/addressModel'),
+Relation = require('../deirapi/api/models/entity/relationModel'),
+
+Company = require('../deirapi/api/models/structure/companyModel'),
+Branch = require('../deirapi/api/models/structure/branchModel'),
+
+Code = require('../deirapi/api/models/system/codeModel'),
+Database = require('../deirapi/api/models/system/databaseModel'),
+Description = require('../deirapi/api/models/system/descriptionModel'),
+Help = require('../deirapi/api/models/system/helpModel'),
+Errorlog = require('../deirapi/api/models/system/log/errorLogModel'),
+Eventlog = require('../deirapi/api/models/system/log/eventLogModel'),
+Menu = require('../deirapi/api/models/system/security/menuModel'),
+Module = require('../deirapi/api/models/system/security/moduleModel'),
+Permission = require('../deirapi/api/models/system/security/permissionModel'),
+Role = require('../deirapi/api/models/system/security/roleModel'),
+User = require('../deirapi/api/models/system/security/userModel'),
+
+Article = require('../deirapi/api/models/portal/articleModel'),
+Bible = require('../deirapi/api/models/portal/articleModel'),
+Directory = require('../deirapi/api/models/portal/articleModel'),
+Event = require('../deirapi/api/models/portal/articleModel'),
+Figure = require('../deirapi/api/models/portal/articleModel'),
+Flash = require('../deirapi/api/models/portal/articleModel'),
+Funeral = require('../deirapi/api/models/portal/articleModel'),
+Immigrant = require('../deirapi/api/models/portal/articleModel'),
+Municipality = require('../deirapi/api/models/portal/articleModel'),
+NewBorn = require('../deirapi/api/models/portal/articleModel'),
+NewsLetter = require('../deirapi/api/models/portal/articleModel'),
+News = require('../deirapi/api/models/portal/articleModel'),
+Poll = require('../deirapi/api/models/portal/articleModel'),
+Project = require('../deirapi/api/models/portal/articleModel'),
+Tourism = require('../deirapi/api/models/portal/articleModel'),
+Wedding = require('../deirapi/api/models/portal/articleModel'),
+
 bodyParser = require('body-parser');
 
 // mongoose instance connection url connection
