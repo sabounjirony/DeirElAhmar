@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm, FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AppService } from '../../app.service';
+import { AppService } from '../../services/app.service';
 
 @Component({
   selector: 'app-login',

@@ -1,5 +1,5 @@
 import { Component, ViewContainerRef } from '@angular/core';
-import { AppService } from './app.service';
+import { AppService } from './services/app.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
