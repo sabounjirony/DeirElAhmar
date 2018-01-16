@@ -65,4 +65,10 @@ export class UserService {
       .then(() => null)
       .catch(this.handleError);
   }
+
+  Authenticate(credentials: any): Observable<any>{
+    return this.http
+    .get('http://localhost:3000/user/data.json/', credentials)
+    .map(response => response.json().data as any);
+  }
 }

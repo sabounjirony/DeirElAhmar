@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm, FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AppService } from './../../app.service';
+import { UserService } from './../../system/security/user/user.service';
 
 @Component({
   selector: 'app-login',
@@ -15,9 +15,9 @@ export class LoginComponent implements OnInit {
   model: any;
   blockDocument: boolean = false;
 
-  constructor(private router: Router, private appService: AppService) {
+  constructor(private router: Router, private userService: UserService) {
     this.frm = new FormGroup({
-      "txtUserName": new FormControl('', [Validators.required, Validators.minLength(10)]),
+      "txtUserName": new FormControl('', [Validators.required, Validators.minLength(4)]),
       "txtPassword": new FormControl('', Validators.required)
     });
 
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.appService.Authenticate({'username': this.model.userName, 'password': this.model.Password}).subscribe(
+    this.userService.Authenticate({'username': this.model.userName, 'password': this.model.Password}).subscribe(
       (response) => {
         alert('success');
       },

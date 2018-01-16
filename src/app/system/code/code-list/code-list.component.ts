@@ -6,7 +6,7 @@ import { DataTableModule, SharedModule } from 'primeng/primeng';
 
 import { AppFunctions } from './../../../app.functions';
 import { CodeService } from '../code.service';
-import { Code } from '../../../models/system/code';
+import { Code } from './../code';
 
 @Component({
   selector: 'app-code-list',

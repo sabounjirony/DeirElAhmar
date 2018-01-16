@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 import { InputMaskModule } from 'primeng/primeng';
 
-import { Code } from '../../../models/system/code';
+import { Code } from './../code';
 
 @Component({
   selector: 'app-code-detail',

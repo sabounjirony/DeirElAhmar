@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function (app, routes) {
-    routes = require('../../../deirapi/api/routes/system/codeRoutes');
+    routes = require('../../../api/api/routes/system/codeRoutes');
 };
 // module.exports = function (app) {
 // };

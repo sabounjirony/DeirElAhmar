@@ -13,10 +13,5 @@ export class AppService {
 
     constructor(private http: Http) { }
 
-    Authenticate(credentials: any): Observable<any>{
-        return this.http
-        .get('https://testfirebase-f9324.firebaseio.com/data.json/', credentials)
-        .map(response => response.json().data as any);
-      }
 
 }

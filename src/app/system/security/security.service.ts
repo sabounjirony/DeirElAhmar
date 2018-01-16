@@ -15,7 +15,7 @@ export class SecurityService {
 
     Authenticate(credentials: any): Observable<any>{
         return this.http
-        .get('https://testfirebase-f9324.firebaseio.com/data.json/', credentials)
+        .get('http://localhost:3000/news/data.json/', credentials)
         .map(response => response.json().data as any);
       }
 }
