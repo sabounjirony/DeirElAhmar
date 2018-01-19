@@ -13,7 +13,8 @@
     "express": "^4.16.2",
     "mongodb": "^2.2.33",
     "mongoose": "^5.0.0-rc1",
-    "mssql": "^4.1.0"
+    "mssql": "^4.1.0",
+    "mysql": "^2.15.0"
   },
   "devDependencies": {
     "nodemon": "^1.14.7"
