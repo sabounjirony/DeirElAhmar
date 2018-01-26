@@ -1,7 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { NgForm, FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from './../../system/security/user/user.service';
+import { NgForm, FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+
+import { ICodeStore } from './../../system/code/codeStore';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +18,11 @@ export class LoginComponent implements OnInit {
   model: any;
   blockDocument: boolean = false;
 
-  constructor(private router: Router, private userService: UserService) {
+  message$: Observable<string>;
+
+  constructor(private router: Router, private store: Store<ICodeStore>) {
+
+    this.message$ = this.store.select('message');
     this.frm = new FormGroup({
       "txtUserName": new FormControl('', [Validators.required, Validators.minLength(4)]),
       "txtPassword": new FormControl('', Validators.required)
@@ -32,15 +39,22 @@ export class LoginComponent implements OnInit {
     console.log(this.frm);
   }
 
-  onSubmit() {
-    this.userService.Authenticate({'username': this.model.userName, 'password': this.model.Password}).subscribe(
-      (response) => {
-        alert('success');
-      },
-      (error) => {
-        alert('fail');
-      }
-    );
-    //this.blockDocument = true;
+  spanishMessage() {
+    this.store.dispatch({ type: 'SPANISH' });
   }
+
+  frenchMessage() {
+    this.store.dispatch({ type: 'FRENCH' });
+  }
+  // onSubmit() {
+  //   this.userService.Authenticate({'username': this.model.userName, 'password': this.model.Password}).subscribe(
+  //     (response) => {
+  //       alert('success');
+  //     },
+  //     (error) => {
+  //       alert('fail');
+  //     }
+  //   );
+  //   //this.blockDocument = true;
+  // }
 }

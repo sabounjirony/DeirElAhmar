@@ -5,7 +5,6 @@ import { NgForm, FormControl, FormGroup, FormBuilder, Validators } from '@angula
 import { DataTableModule, SharedModule } from 'primeng/primeng';
 
 import { AppFunctions } from './../../../app.functions';
-import { CodeService } from '../code.service';
 import { Code } from './../code';
 
 @Component({
@@ -19,7 +18,7 @@ export class CodeListComponent implements OnInit {
   model: Code;
   cols: any[];
   codes: Code[];
-  constructor(private appFunctions: AppFunctions, private codeService: CodeService) {
+  constructor(private appFunctions: AppFunctions) {
     this.frm = new FormGroup({
       "ddlCategory": new FormControl('', Validators.required),
       "txtName": new FormControl('', Validators.required),
