@@ -1,23 +1,20 @@
-import { Component, ViewContainerRef } from '@angular/core';
-import { AppService } from './app.service';
-import { TranslateService } from '@ngx-translate/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [AppService],
+  // tslint:disable-next-line
+  selector: 'body',
+  template: '<router-outlet></router-outlet>'
 })
+export class AppComponent implements OnInit {
+  constructor(private router: Router) { }
 
-export class AppComponent {
-
-  blockDocument: boolean = false;
-  
-  constructor(private translate: TranslateService) {
-    translate.setDefaultLang('en');
-  }
-
-  switchLanguage(language: string) {
-    this.translate.use(language);
+  ngOnInit() {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0)
+    });
   }
 }

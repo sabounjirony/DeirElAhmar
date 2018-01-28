@@ -1,6 +1,6 @@
 import { NgModule, ViewContainerRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'; // ng-If and ng-For
-import { CommonModule } from '@angular/common';
+import { CommonModule, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,6 +10,18 @@ import { EffectsModule } from '@ngrx/effects';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+
+// Import core ui containers
+import { FullLayoutComponent, SimpleLayoutComponent } from './containers';
+// Import core ui components
+import { AppAsideComponent, AppBreadcrumbsComponent, AppFooterComponent, AppHeaderComponent, AppSidebarComponent, AppSidebarFooterComponent, AppSidebarFormComponent, AppSidebarHeaderComponent, AppSidebarMinimizerComponent, APP_SIDEBAR_NAV } from './components';
+// Import core ui directives
+import { AsideToggleDirective, NAV_DROPDOWN_DIRECTIVES, ReplaceDirective, SIDEBAR_TOGGLE_DIRECTIVES } from './directives';
+
+// Import core ui 3rd party components
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 import { codeReducer } from './system/code/codeReducer'
 import { codeEffects } from './system/code/codeEffects'
@@ -43,6 +55,20 @@ import { MenuService } from './system/security/menu/menu.service';
 import { ModuleService } from './system/security/module/module.service';
 import { PermissionService } from './system/security/permission/permission.service';
 import { RoleService } from './system/security/role/role.service';
+
+//Core ui constants
+const APP_CONTAINERS = [FullLayoutComponent, SimpleLayoutComponent];
+const APP_COMPONENTS = [AppAsideComponent,
+  AppBreadcrumbsComponent,
+  AppFooterComponent,
+  AppHeaderComponent,
+  AppSidebarComponent,
+  AppSidebarFooterComponent,
+  AppSidebarFormComponent,
+  AppSidebarHeaderComponent,
+  AppSidebarMinimizerComponent,
+  APP_SIDEBAR_NAV]
+const APP_DIRECTIVES = [AsideToggleDirective, NAV_DROPDOWN_DIRECTIVES, ReplaceDirective, SIDEBAR_TOGGLE_DIRECTIVES]
 
 export const firebaseConfig = {
   apiKey: "AIzaSyA0BcUcu4V8aHT_gM-32BhRcmqji4z-lts",
@@ -81,6 +107,8 @@ export const firebaseConfig = {
     InputMaskModule,
     DataTableModule,
     SharedModule,
+    BsDropdownModule.forRoot(),
+    TabsModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -98,7 +126,7 @@ export const firebaseConfig = {
     // ])
   ],
   //Application scope
-  providers: [AppFunctions, CodeService, DescriptionService, ErrorService, EventService, MenuService, ModuleService, PermissionService, RoleService, UserService],  //Services, can be added per component
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }, AppFunctions, CodeService, DescriptionService, ErrorService, EventService, MenuService, ModuleService, PermissionService, RoleService, UserService],  //Services, can be added per component
   //Component to bootstrap application with, always AppComponent
   bootstrap: [AppComponent]
 })
