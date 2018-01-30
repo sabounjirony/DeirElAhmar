@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    alert('on init');
     console.log(this.frm);
   }
 

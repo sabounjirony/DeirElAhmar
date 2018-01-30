@@ -2,7 +2,7 @@ import { NgModule, ViewContainerRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'; // ng-If and ng-For
 import { CommonModule, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+// import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { StoreModule } from '@ngrx/store';
@@ -17,6 +17,8 @@ import { FullLayoutComponent, SimpleLayoutComponent } from './containers';
 import { AppAsideComponent, AppBreadcrumbsComponent, AppFooterComponent, AppHeaderComponent, AppSidebarComponent, AppSidebarFooterComponent, AppSidebarFormComponent, AppSidebarHeaderComponent, AppSidebarMinimizerComponent, APP_SIDEBAR_NAV } from './components';
 // Import core ui directives
 import { AsideToggleDirective, NAV_DROPDOWN_DIRECTIVES, ReplaceDirective, SIDEBAR_TOGGLE_DIRECTIVES } from './directives';
+// Import core ui routing
+import { AppRoutingModule } from './app.routing';
 
 // Import core ui 3rd party components
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -35,16 +37,16 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { BlockUIModule, GrowlModule, MenubarModule, MenuItem, InputMaskModule, DataTableModule, SharedModule, ButtonModule } from 'primeng/primeng';
 
-import { AppRoutingModule } from './app.routing.module';
+// import { AppRoutingModule } from './app.routing.module';
 import { AppFunctions } from './app.functions';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './shared/login/login.component';
 import { LogoutComponent } from './shared/logout/logout.component';
-import { HeaderComponent } from './shared/header/header/header.component';
-import { HomeComponent } from './shared/home/home.component';
+// import { HeaderComponent } from './shared/header/header/header.component';
+// import { HomeComponent } from './shared/home/home.component';
 import { ErrorComponent } from './shared/error/error.component';
-import { FooterComponent } from './shared/footer/footer/footer.component';
+// import { FooterComponent } from './shared/footer/footer/footer.component';
 
 import { UserService } from './system/security/user/user.service';
 import { CodeService } from './system/code/codeService';
@@ -82,12 +84,15 @@ export const firebaseConfig = {
   //Custom Components directives and pipes
   declarations: [
     AppComponent,
-    HeaderComponent,
-    HomeComponent,
+    // HeaderComponent,
+    // HomeComponent,
     ErrorComponent,
-    FooterComponent,
+    // FooterComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+     ...APP_CONTAINERS,
+    ...APP_COMPONENTS,
+    ...APP_DIRECTIVES
   ],
   //Import third party finished modules, and custom modules only available for custom components defined above
   //The imports section is not distributed to the rest of the application need to re-import each time needed
@@ -96,7 +101,7 @@ export const firebaseConfig = {
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
+    // HttpModule,
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
