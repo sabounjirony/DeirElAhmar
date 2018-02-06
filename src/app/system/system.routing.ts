@@ -11,22 +11,37 @@ import { ModuleListComponent } from './security/module/module-list/module-list.c
 import { RoleListComponent } from './security/role/role-list/role-list.component';
 import { UserListComponent } from './security/user/user-list/user-list.component';
 import { UserDetailComponent } from './security/user/user-detail/user-detail.component';
+import { DatabaseComponent } from './database/database.component';
 
 const routes: Routes = [
   {
-    path: 'codes', component: CodeListComponent, children: [
-      { path: ':mode/:id', component: CodeDetailComponent }
+    path: '', data: { title: 'System' },
+    children: [
+      { path: 'codes', component: CodeListComponent, data: { title: 'Codes' } },
+      { path: 'errors', component: ErrorListComponent, data: { title: 'Errors' }  },
+      { path: 'events', component: EventListComponent, data: { title: 'Events' }  },
+      { path: 'descriptions', component: DescriptionListComponent, data: { title: 'Descrptions' }  },
+      { path: 'menus', component: MenuListComponent, data: { title: 'Menus' }  },
+      { path: 'modules', component: ModuleListComponent, data: { title: 'Modules' }  },
+      { path: 'roles', component: RoleListComponent, data: { title: 'Roles' }  },
+      { path: 'users/:id', component: UserDetailComponent },
+      { path: 'users', component: UserListComponent, data: { title: 'Users' }  },
+      { path: 'database', component: DatabaseComponent, data: { title: 'Database' }  }
     ]
-  },
-  { path: 'errors', component: ErrorListComponent },
-  { path: 'events', component: EventListComponent },
-  { path: 'descriptions', component: DescriptionListComponent },
-  { path: 'menus', component: MenuListComponent },
-  { path: 'modules', component: ModuleListComponent },
-  { path: 'roles', component: RoleListComponent },
-  { path: 'users/:id', component: UserDetailComponent },
-  { path: 'users', component: UserListComponent }
+  }
 ];
+
+// const routes: Routes = [
+//         { path: 'codes', component: CodeListComponent, children: [{ path: ':mode/:id', component: CodeDetailComponent }]},
+//         { path: 'errors', component: ErrorListComponent },
+//         { path: 'events', component: EventListComponent },
+//         { path: 'descriptions', component: DescriptionListComponent },
+//         { path: 'menus', component: MenuListComponent },
+//         { path: 'modules', component: ModuleListComponent },
+//         { path: 'roles', component: RoleListComponent },
+//         { path: 'users/:id', component: UserDetailComponent },
+//         { path: 'users', component: UserListComponent }
+// ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

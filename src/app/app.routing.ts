@@ -25,6 +25,10 @@ export const routes: Routes = [
         loadChildren: './views/base/base.module#BaseModule'
       },
       {
+        path: 'system',
+        loadChildren: './system/system.module#SystemModule'
+      },
+      {
         path: 'buttons',
         loadChildren: './views/buttons/buttons.module#ButtonsModule'
       },

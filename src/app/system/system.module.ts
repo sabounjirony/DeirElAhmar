@@ -4,8 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { DataTableModule, SharedModule } from 'primeng/primeng';
 
-import { SystemRouting } from './system.routing';
-
 import { CodeListComponent } from './../system/code/code-list/code-list.component';
 import { CodeDetailComponent } from './../system/code/code-detail/code-detail.component';
 
@@ -32,7 +30,9 @@ import { RoleDetailComponent } from './../system/security/role/role-detail/role-
 import { UserListComponent } from './../system/security/user/user-list/user-list.component';
 import { UserDetailComponent } from './../system/security/user/user-detail/user-detail.component';
 
-import { CodeRouting } from './code/code-routing';
+import { SystemRouting } from './system.routing';
+import { CodeRouting } from './code/code.routing';
+import { DatabaseComponent } from './database/database.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,7 @@ import { CodeRouting } from './code/code-routing';
     ModuleListComponent, ModuleDetailComponent,
     PermissionDetailComponent,
     RoleListComponent, RoleDetailComponent,
-    UserListComponent, UserDetailComponent
+    UserListComponent, UserDetailComponent, DatabaseComponent
   ],
   imports: [
     CommonModule,

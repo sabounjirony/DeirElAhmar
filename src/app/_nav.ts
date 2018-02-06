@@ -2,11 +2,73 @@ export const navigation = [
   {
     name: 'Dashboard',
     url: '/dashboard',
-    icon: 'icon-speedometer',
-    badge: {
-      variant: 'info',
-      text: 'NEW'
-    }
+    icon: 'icon-speedometer'
+  },
+  {
+    title: true,
+    name: 'Setup'
+  },
+  {
+    title: true,
+    name: 'System',
+  },
+  {
+    name: 'Codes',
+    url: '/system/codes',
+    icon: 'fa fa-list'
+  },
+  {
+    name: 'Security',
+    url: '/system/cards',
+    icon: 'fa fa-shield',
+    children: [
+      {
+        name: 'Users',
+        url: '/system/users',
+        icon: 'fa fa-user'
+      },
+      {
+        name: 'Roles',
+        url: '/system/roles',
+        icon: 'fa fa-users'
+      },
+      {
+        name: 'Modules',
+        url: '/system/modules',
+        icon: 'fa fa-navicon'
+      },
+      {
+        name: 'Menu',
+        url: '/system/menus',
+        icon: 'fa fa-sitemap'
+      }
+    ]
+  },
+  {
+    name: 'Logging',
+    url: '/base/cards',
+    icon: 'fa fa-bars',
+    children: [
+      {
+        name: 'Events log',
+        url: '/system/events',
+        icon: 'fa fa-warning'
+      },
+      {
+        name: 'Errors log',
+        url: '/system/errors',
+        icon: 'fa fa-times-circle'
+      }]
+  },
+  {
+    name: 'Labels',
+    url: '/system/descriptions',
+    icon: 'fa fa-font'
+  },
+  {
+    name: 'Database',
+    url: '/system/database',
+    icon: 'fa fa-database'
   },
   {
     title: true,
