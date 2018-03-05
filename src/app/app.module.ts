@@ -25,8 +25,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 
-import { codeReducer } from './system/code/codeReducer'
-import { codeEffects } from './system/code/codeEffects'
+import { codeReducer } from './system/code/store/code.reducers'
+import { codeEffects } from './system/code/store/code.effects'
 
 import { userReducer } from './system/security/user/userReducer'
 import { userEffects } from './system/security/user/userEffects'
@@ -121,14 +121,12 @@ export const firebaseConfig = {
         deps: [HttpClient]
       }
     }),
+    StoreModule.forRoot({ code: codeReducer })
     // AngularFireModule.initializeApp(firebaseConfig),
     // AngularFireAuthModule,
     // EffectsModule.forRoot([
     //   userEffects, codeEffects
     // ]),
-    // StoreModule.forRoot([
-    //   { state: codeReducer }
-    // ])
   ],
   //Application scope
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }, AppFunctions, CodeService, DescriptionService, ErrorService, EventService, MenuService, ModuleService, PermissionService, RoleService, UserService],  //Services, can be added per component

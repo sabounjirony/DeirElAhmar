@@ -4,7 +4,7 @@ import { NgForm, FormControl, FormGroup, FormBuilder, Validators } from '@angula
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
-import { ICodeStore } from './../../system/code/codeStore';
+import { ICodeStore } from './../../system/code/store/code.Store';
 
 @Component({
   selector: 'app-login',
