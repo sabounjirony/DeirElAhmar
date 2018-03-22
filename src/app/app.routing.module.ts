@@ -7,7 +7,15 @@ import { HomeComponent } from './shared/home/home.component';
 import { ErrorComponent } from './shared/error/error.component';
 
 const routes: Routes = [
+<<<<<<< HEAD
     { path: '', redirectTo: '/login', pathMatch: 'full' },
+=======
+<<<<<<< HEAD
+    // { path: '', redirectTo: '/login', pathMatch: 'full' },
+=======
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
+>>>>>>> 
+>>>>>>> 077bc3e4e0e76729b8f11737b895a8737d8e5ff2
     { path: 'login', component: LoginComponent },
     { path: 'logout', component: LogoutComponent },
     { path: 'error', component: ErrorComponent },

@@ -1,7 +1,15 @@
 {
   "name": "api",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "Restful api",
+=======
+<<<<<<< HEAD
+  "description": "Restful deirelahmar api",
+=======
+  "description": "Restful api",
+>>>>>>> 
+>>>>>>> 077bc3e4e0e76729b8f11737b895a8737d8e5ff2
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
