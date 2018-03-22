@@ -2,7 +2,10 @@ import { NgModule, ViewContainerRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'; // ng-If and ng-For
 import { CommonModule, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+<<<<<<< HEAD
 // import { HttpModule } from '@angular/http';
+=======
+>>>>>>> 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { StoreModule } from '@ngrx/store';
@@ -38,7 +41,11 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BlockUIModule, GrowlModule, MenubarModule, MenuItem, InputMaskModule, DataTableModule, SharedModule, ButtonModule } from 'primeng/primeng';
 
 // import { AppRoutingModule } from './app.routing.module';
+<<<<<<< HEAD
 import { AppFunctions } from './app.functions';
+=======
+import { Globals } from './app.globals';
+>>>>>>> 
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './shared/login/login.component';
@@ -101,7 +108,10 @@ export const firebaseConfig = {
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+<<<<<<< HEAD
     // HttpModule,
+=======
+>>>>>>> 
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -129,7 +139,11 @@ export const firebaseConfig = {
     // ]),
   ],
   //Application scope
+<<<<<<< HEAD
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }, AppFunctions, CodeService, DescriptionService, ErrorService, EventService, MenuService, ModuleService, PermissionService, RoleService, UserService],  //Services, can be added per component
+=======
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }, Globals, CodeService, DescriptionService, ErrorService, EventService, MenuService, ModuleService, PermissionService, RoleService, UserService],  //Services, can be added per component
+>>>>>>> 
   //Component to bootstrap application with, always AppComponent
   bootstrap: [AppComponent]
 })
