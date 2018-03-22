@@ -1,0 +1,41 @@
+<form [formGroup]="frm" (ngSubmit)="onSubmit()">
+    <div class="w-25 p-3">
+        <div class="form-group">
+            <label for="ddlCategory">Category*</label>
+            <select id="ddlCategory" formControlName="ddlCategory" [(ngModel)]="model.Category" class="form-control" pInputText>
+                <option value="">...</option>
+                <option value="1">Category 1</option>
+                <option value="2">Category 2</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="txtName">Name*</label>
+            <input type="text" id="txtName" formControlName="txtName" [(ngModel)]="model.Name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="txtValue">Value*</label>
+            <input type="text" id="txtValue" formControlName="txtValue" [(ngModel)]="model.Value" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="txtDescription">Description</label>
+            <textarea id="txtDescription" formControlName="txtDescription" [(ngModel)]="model.Description" cols="30" rows="10" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="ddlStatus">Status*</label>
+            <select id="ddlStatus" formControlName="ddlStatus" [(ngModel)]="model.Status" class="form-control">
+                <option value="">...</option>
+                <option value="A">Active</option>
+                <option value="S">Stopped</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="chkIsProtected" formControlName="chkIsProtected" [(ngModel)]="model.IsProtected">
+            <label for="chkIsProtected">IsProtected</label>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!frm.valid">Save</button>
+        <button type="button" class="btn btn-primary">Cancel</button>
+    </div>
+</form>
+<!--<hr>
+<a [routerLink]="['/codes', txtId.value]" [queryParams]="{mode: 'edit'}">Code detail</a> <input type="text" #txtId (input)="0" /> <br/>
+id: <b>{{id}}</b>, <b>mode: {{mode}}</b> -->
