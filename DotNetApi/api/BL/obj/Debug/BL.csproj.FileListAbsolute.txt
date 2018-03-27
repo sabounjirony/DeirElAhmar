@@ -1,0 +1,5 @@
+F:\Applications\Angular\Seed\DotNetApi\api\BL\bin\Debug\BL.dll
+F:\Applications\Angular\Seed\DotNetApi\api\BL\bin\Debug\BL.pdb
+F:\Applications\Angular\Seed\DotNetApi\api\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+F:\Applications\Angular\Seed\DotNetApi\api\BL\obj\Debug\BL.dll
+F:\Applications\Angular\Seed\DotNetApi\api\BL\obj\Debug\BL.pdb

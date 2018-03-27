@@ -5,9 +5,9 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace api.Controllers.System
+namespace Api.Controllers.System
 {
-    public class ConfigController : ApiController
+    public class ConfigController : WebApiBaseController
     {
     }
 }

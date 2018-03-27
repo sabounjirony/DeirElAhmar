@@ -5,9 +5,9 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
-namespace api.Controllers
+namespace Api.Controllers
 {
-    public class UserController : ApiController
+    public class UserController : WebApiBaseController
     {
         [HttpGet]
         // GET: api/User

@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>api</RootNamespace>
-    <AssemblyName>api</AssemblyName>
+    <RootNamespace>Api</RootNamespace>
+    <AssemblyName>Api</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
@@ -88,6 +88,10 @@
       <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PostSharp, Version=4.1.14.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\PostSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.2.1\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
       <Private>True</Private>
@@ -139,11 +143,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiAspect.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\WebApiBaseController.cs" />
+    <Compile Include="Controllers\system\Logging\ErrorController.cs" />
+    <Compile Include="Controllers\system\Logging\EventController.cs" />
+    <Compile Include="Controllers\system\Multilanguage\DescriptionController.cs" />
+    <Compile Include="Controllers\system\Security\PermissionController.cs" />
+    <Compile Include="Controllers\system\Security\ModuleController.cs" />
+    <Compile Include="Controllers\system\Security\MenuController.cs" />
+    <Compile Include="Filters\CustomAuthorizationFIlter.cs" />
     <Compile Include="PreflightRequestsHandler.cs" />
-    <Compile Include="Controllers\System\ConfigController.cs" />
-    <Compile Include="Controllers\System\Security\UserController.cs" />
+    <Compile Include="Controllers\system\ConfigController.cs" />
+    <Compile Include="Controllers\system\Security\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -162,8 +174,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Controllers\setup\" />
+    <Folder Include="IO\Backup\" />
+    <Folder Include="IO\Documents\" />
+    <Folder Include="IO\Multilanguage\" />
+    <Folder Include="IO\Templates\" />
+    <Folder Include="IO\Temp\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

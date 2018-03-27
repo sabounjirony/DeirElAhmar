@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
+﻿using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Routing;
+using api.Filters;
 
-namespace api
+namespace Api
 {
     public static class WebApiConfig
     {
@@ -16,10 +15,6 @@ namespace api
 
         public static void Register(HttpConfiguration config)
         {
-            //var json = config.Formatters.JsonFormatter;
-            //json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
-            //config.Formatters.Remove(config.Formatters.XmlFormatter);
-
             var constraints = new { httpMethod = new HttpMethodConstraint(HttpMethod.Options) };
             config.Routes.IgnoreRoute("OPTIONS", "{controller}/{action}", constraints);
 
@@ -27,7 +22,6 @@ namespace api
             var cors = new EnableCorsAttribute(ORIGINS, HEADERS, METHODS);
             config.EnableCors(cors);
             //config.EnableCors();
-
 
             // Add handler to deal with preflight requests, this is the important part
             //config.MessageHandlers.Add(new PreflightRequestsHandler()); // Defined above
@@ -38,6 +32,11 @@ namespace api
             config.Routes.MapHttpRoute(name: "NoId", routeTemplate: "{controller}/{action}");
             config.Routes.MapHttpRoute(name: "WithId", routeTemplate: "{controller}/{action}/{id}");
             config.Routes.MapHttpRoute(name: "TwoString", routeTemplate: "{controller}/{action}/{id}/{code}");
+
+            GlobalConfiguration.Configuration.Filters.Add(new CustomAuthorizationFilter());
+            GlobalConfiguration.Configuration.Formatters.Clear();
+            GlobalConfiguration.Configuration.Formatters.Add(new JsonMediaTypeFormatter());
+            Bl.BlCommon.InitiateService();
 
         }
     }

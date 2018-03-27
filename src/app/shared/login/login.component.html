@@ -1,34 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<p-blockUI [blocked]="blockDocument" class="loader"></p-blockUI>
-<div class="row">&nbsp;</div>
-<div class="row">&nbsp;</div>
-<div class="row">&nbsp;</div>
-<div class="row">
-  <div class="col-xs-8 cols-sm-6 col-md-4 col-xs-offset-2 col-sm-offset-3 col-md-offset-4">
-    <div class="panel panel-default">
-      <div class="row text-primary panel-heading">
-        <h3>{{ 'Welcome' | translate }}</h3>
-      </div>
-      <div class="panel-body">
-        <form [formGroup]="frm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <input type="text" id="txtUserName" placeholder="{{'Username'| translate}}" formControlName="txtUserName" [(ngModel)]="model.UserName"
-              class="form-control">
-            <span *ngIf="!frm.get('txtUserName').valid && frm.get('txtUserName').touched" class="text-danger">{{ 'InvalidField' | translate:{FieldName: 'Username'} }}</span>
-          </div>
-          <div class="form-group">
-            <input type="password" id="txtPassword" placeholder="{{'Password'| translate}}" formControlName="txtPassword" [(ngModel)]="model.Password"
-              class="form-control">
-            <span *ngIf="!frm.get('txtPassword').valid && frm.get('txtPassword').touched" class="text-danger">{{ 'InvalidField' | translate:{FieldName: 'Password'} }}</span>
-          </div>
-          <div class="form-group cultAntiAlign">
-            <button type="submit" class="btn btn-primary" [disabled]="!frm.valid">Login</button>
-          </div>
-        </form>
-=======
->>>>>>> 077bc3e4e0e76729b8f11737b895a8737d8e5ff2
 <div class="app flex-row align-items-center">
   <div class="container">
     <div class="row justify-content-center">
@@ -67,10 +36,6 @@
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-=======
->>>>>>> 
->>>>>>> 077bc3e4e0e76729b8f11737b895a8737d8e5ff2
       </div>
     </div>
   </div>
