@@ -1,5 +1,12 @@
 F:\Applications\Angular\Seed\DotNetApi\api\Tools\bin\Debug\Tools.dll
 F:\Applications\Angular\Seed\DotNetApi\api\Tools\bin\Debug\Tools.pdb
-F:\Applications\Angular\Seed\DotNetApi\api\Tools\obj\Debug\Tools.csprojResolveAssemblyReference.cache
+F:\Applications\Angular\Seed\DotNetApi\api\Tools\bin\Debug\DocumentFormat.OpenXml.dll
+F:\Applications\Angular\Seed\DotNetApi\api\Tools\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+F:\Applications\Angular\Seed\DotNetApi\api\Tools\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+F:\Applications\Angular\Seed\DotNetApi\api\Tools\bin\Debug\Microsoft.SqlServer.RegSvrEnum.dll
+F:\Applications\Angular\Seed\DotNetApi\api\Tools\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
+F:\Applications\Angular\Seed\DotNetApi\api\Tools\bin\Debug\Microsoft.SqlServer.Smo.dll
+F:\Applications\Angular\Seed\DotNetApi\api\Tools\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+F:\Applications\Angular\Seed\DotNetApi\api\Tools\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
 F:\Applications\Angular\Seed\DotNetApi\api\Tools\obj\Debug\Tools.dll
 F:\Applications\Angular\Seed\DotNetApi\api\Tools\obj\Debug\Tools.pdb

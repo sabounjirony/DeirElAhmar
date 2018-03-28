@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>086958ce-9f33-43cf-82e7-d4dc3832139a</ProjectGuid>
+    <ProjectGuid>{086958CE-9F33-43CF-82E7-D4DC3832139A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VM</RootNamespace>
@@ -30,24 +30,56 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Ddl\DdlVm.cs" />
+    <Compile Include="FilterToken.cs" />
+    <Compile Include="GeneralSearchVm.cs" />
+    <Compile Include="Grid\GridVm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuickSearch\QuickSearch.cs" />
+    <Compile Include="Setup\AddressVm.cs" />
+    <Compile Include="Setup\BranchVm.cs" />
+    <Compile Include="Setup\CompanyVm.cs" />
+    <Compile Include="Setup\EmployeeLocationVm.cs" />
+    <Compile Include="Setup\EmployeeVm.cs" />
+    <Compile Include="Setup\EntityVm.cs" />
+    <Compile Include="Setup\XtraVm.cs" />
+    <Compile Include="System\CodeVm.cs" />
+    <Compile Include="System\CommentVm.cs" />
+    <Compile Include="System\DocumentVm.cs" />
+    <Compile Include="System\HelpVm.cs" />
+    <Compile Include="System\Logging\ErrorVm.cs" />
+    <Compile Include="System\Logging\EventVm.cs" />
+    <Compile Include="System\MultiLanguage\DescriptionVm.cs" />
+    <Compile Include="System\Security\LoginVm.cs" />
+    <Compile Include="System\Security\MenuVm.cs" />
+    <Compile Include="System\Security\ModuleVm.cs" />
+    <Compile Include="System\Security\PermissionVm.cs" />
+    <Compile Include="System\Security\RoleVm.cs" />
+    <Compile Include="System\Security\UserVm.cs" />
+    <Compile Include="Tree\TreeNodeAjax.cs" />
+    <Compile Include="Tree\TreeVm.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DM\DM.csproj">
+      <Project>{186652c3-140c-42db-9f51-8bf73f2953b1}</Project>
+      <Name>DM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Tools.csproj">
+      <Project>{7a1fe0a3-c606-4220-97c2-5e2fbbc49de8}</Project>
+      <Name>Tools</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -57,5 +89,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>

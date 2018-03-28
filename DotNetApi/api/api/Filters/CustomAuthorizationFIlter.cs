@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
-using Bl.System.Logging;
-using Bl.System.Security;
+using BL.System.Logging;
+using BL.System.Security;
 using Api;
 
 namespace api.Filters

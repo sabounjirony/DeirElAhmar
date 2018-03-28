@@ -36,7 +36,7 @@ namespace Api
             GlobalConfiguration.Configuration.Filters.Add(new CustomAuthorizationFilter());
             GlobalConfiguration.Configuration.Formatters.Clear();
             GlobalConfiguration.Configuration.Formatters.Add(new JsonMediaTypeFormatter());
-            Bl.BlCommon.InitiateService();
+            BL.BlCommon.InitiateService();
 
         }
     }

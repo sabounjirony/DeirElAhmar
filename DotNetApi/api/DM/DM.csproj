@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>186652c3-140c-42db-9f51-8bf73f2953b1</ProjectGuid>
+    <ProjectGuid>{186652C3-140C-42DB-9F51-8BF73F2953B1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DM</RootNamespace>
@@ -30,24 +30,74 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\packages\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Conventions\EnumConventions.cs" />
+    <Compile Include="Conventions\VersionConvention.cs" />
+    <Compile Include="Conventions\XmlConventions.cs" />
+    <Compile Include="Mappings\Setup\AddressMap.cs" />
+    <Compile Include="Mappings\Setup\AntiDictMap.cs" />
+    <Compile Include="Mappings\Setup\ArDictMap.cs" />
+    <Compile Include="Mappings\Setup\BranchMap.cs" />
+    <Compile Include="Mappings\Setup\CompanyMap.cs" />
+    <Compile Include="Mappings\Setup\EmployeeMap.cs" />
+    <Compile Include="Mappings\Setup\EntityMap.cs" />
+    <Compile Include="Mappings\Setup\XtraMap.cs" />
+    <Compile Include="Mappings\System\CodeMap.cs" />
+    <Compile Include="Mappings\System\CommentMap.cs" />
+    <Compile Include="Mappings\System\DocumentMap.cs" />
+    <Compile Include="Mappings\System\HelpMap.cs" />
+    <Compile Include="Mappings\System\Logging\LogErrorMap.cs" />
+    <Compile Include="Mappings\System\Logging\LogMap.cs" />
+    <Compile Include="Mappings\System\MultiLanguage\DescriptionMap.cs" />
+    <Compile Include="Mappings\System\Security\MenuMap.cs" />
+    <Compile Include="Mappings\System\Security\ModuleMap.cs" />
+    <Compile Include="Mappings\System\Security\PermissionMap.cs" />
+    <Compile Include="Mappings\System\Security\RoleMap.cs" />
+    <Compile Include="Mappings\System\Security\UserMap.cs" />
+    <Compile Include="Models\Setup\Address.cs" />
+    <Compile Include="Models\Setup\AntiDict.cs" />
+    <Compile Include="Models\Setup\ArDict.cs" />
+    <Compile Include="Models\Setup\Branch.cs" />
+    <Compile Include="Models\Setup\Company.cs" />
+    <Compile Include="Models\Setup\Employee.cs" />
+    <Compile Include="Models\Setup\Entity.cs" />
+    <Compile Include="Models\Setup\Xtra.cs" />
+    <Compile Include="Models\System\Code.cs" />
+    <Compile Include="Models\System\Comment.cs" />
+    <Compile Include="Models\System\Document.cs" />
+    <Compile Include="Models\System\Help.cs" />
+    <Compile Include="Models\System\Logging\Log.cs" />
+    <Compile Include="Models\System\Logging\LogError.cs" />
+    <Compile Include="Models\System\MultiLanguage\Description.cs" />
+    <Compile Include="Models\System\Security\Menu.cs" />
+    <Compile Include="Models\System\Security\Module.cs" />
+    <Compile Include="Models\System\Security\Permission.cs" />
+    <Compile Include="Models\System\Security\Role.cs" />
+    <Compile Include="Models\System\Security\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tools\Tools.csproj">
+      <Project>{7a1fe0a3-c606-4220-97c2-5e2fbbc49de8}</Project>
+      <Name>Tools</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -57,5 +107,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>
