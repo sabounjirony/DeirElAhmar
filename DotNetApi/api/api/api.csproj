@@ -145,6 +145,9 @@
   <ItemGroup>
     <Compile Include="ApiAspect.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Setup\EmployeeController.cs" />
+    <Compile Include="Controllers\Setup\EntityController.cs" />
+    <Compile Include="Controllers\Setup\XtraController.cs" />
     <Compile Include="Controllers\WebApiBaseController.cs" />
     <Compile Include="Controllers\System\Logging\ErrorController.cs" />
     <Compile Include="Controllers\System\Logging\EventController.cs" />
@@ -174,7 +177,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\Setup\" />
     <Folder Include="IO\Backup\" />
     <Folder Include="IO\Documents\" />
     <Folder Include="IO\Multilanguage\" />
@@ -185,6 +187,14 @@
     <ProjectReference Include="..\BL\BL.csproj">
       <Project>{06b6d6f3-a979-4194-ab45-bf89d66d8f53}</Project>
       <Name>BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DM\DM.csproj">
+      <Project>{186652c3-140c-42db-9f51-8bf73f2953b1}</Project>
+      <Name>DM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VM\VM.csproj">
+      <Project>{086958ce-9f33-43cf-82e7-d4dc3832139a}</Project>
+      <Name>VM</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

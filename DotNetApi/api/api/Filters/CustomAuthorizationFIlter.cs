@@ -3,9 +3,8 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 using BL.System.Logging;
 using BL.System.Security;
-using Api;
 
-namespace api.Filters
+namespace Api.Filters
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     [ApiAspect]
@@ -30,7 +29,7 @@ namespace api.Filters
                     else
                     { throw new BusinessException("InvalidTicket", "lblUser"); }
                 }
-                apiCommon.CurrentUserId = (long)userId;
+                ApiCommon.CurrentUserId = (long)userId;
                 base.OnAuthorization(actionContext);
             }
         }

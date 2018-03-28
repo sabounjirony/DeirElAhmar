@@ -25,7 +25,7 @@ namespace Api
         }
     }
 
-    public static class apiCommon
+    public static class ApiCommon
     {
         public static long CurrentUserId;
     }

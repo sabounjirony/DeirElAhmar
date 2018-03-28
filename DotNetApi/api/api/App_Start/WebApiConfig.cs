@@ -3,7 +3,7 @@ using System.Net.Http.Formatting;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Routing;
-using api.Filters;
+using Api.Filters;
 
 namespace Api
 {
